@@ -4,24 +4,18 @@
     <title>Quotes</title>
   </head>
   <body>
-  	<p>Welcome, {{session['name']}}!</p>
-  	<a href="/users/logout">Log off</a>
-  	<p>Contribute a Quote:</p>
-  	<form action="/quotes/create" method="post">
-  	<p>Quotes By: <input type="text" name="quotes_by"></p>
-  	<p>Message: <textarea name='message' cols='50' rows='5'></textarea>
-  	<input type="submit" value="Submit your Quote"></p></form>
-  	<hr>
-  	<p>Quotable Quotes</p>
+  <a href="/quotes">Dashboard</a>
+  <a href="/users/logout">Log off</a>
+  	<p>Post by {{session['name']}}!</p>
+  	
+  	
   	{% for quote in quotes%}
   		{{quote['content']}}
-  		Posted by <a href="/quotes/show/{{quote['id']}}">{{quote['users_id']}}</a>
-  		<p></p>
-  		<form action="" method="post"><input type="submit" value="Add to List">
-  		<hr>
+  		
   		{%endfor%}
   		
   		</form>
   </body>
 </html>
+
 
